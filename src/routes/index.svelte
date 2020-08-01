@@ -4,8 +4,7 @@
     try {
       const usStats = await requests.usStats();
       return { usStats };
-    } catch (e) {
-    }
+    } catch (e) {}
   }
 </script>
 
@@ -28,6 +27,6 @@
   </div>
 </div>
 
-<CovidStat />
+<CovidStat {...usStats} />
 <CovidChart />
 <TableContainer />
