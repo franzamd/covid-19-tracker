@@ -17,7 +17,11 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a href="/" class="navbar-item" class:is-active={segment === undefined}>
+    <a
+      rel="prefetch"
+      href="/"
+      class="navbar-item"
+      class:is-active={segment === undefined}>
       <img src="logo.jpg" alt="virus" />
     </a>
     <span
@@ -33,10 +37,15 @@
   </div>
   <div class="navbar-menu" class:is-active={isOpen}>
     <div class="navbar-start">
-      <a href="/" class="navbar-item" class:is-active={segment === undefined}>
+      <a
+        rel="prefetch"
+        href="/"
+        class="navbar-item"
+        class:is-active={segment === undefined}>
         Home
       </a>
       <a
+        rel="prefetch"
         href="/about"
         class="navbar-item"
         class:is-active={segment === 'about'}>
