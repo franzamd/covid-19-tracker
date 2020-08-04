@@ -4,8 +4,9 @@
     try {
       const usStats = await requests.usStats();
       const historic = await requests.historicUS();
+      const statesData = await requests.statesData();
 
-      return { usStats, historic };
+      return { usStats, historic, statesData };
     } catch (e) {
       console.log(e);
       this.error(500, e);
@@ -21,7 +22,8 @@
 
   export let usStats;
   export let historic;
-  console.log(historic);
+  export let statesData;
+  console.log(statesData);
 </script>
 
 <svelte:head>
