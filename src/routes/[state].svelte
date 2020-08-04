@@ -10,10 +10,13 @@
       return;
     }
 
+    const fullStateName = stateNames.find((s) => s.abbreviation === state).name;
+
     try {
       const stats = await requests.stateStats(state);
+      const historic = await requests.historicState(state);
 
-      return { state, stats };
+      return { state: fullStateName, stats, historic };
     } catch (error) {
       this.error(
         500,
@@ -31,6 +34,7 @@
 
   export let state;
   export let stats;
+  export let historic;
 </script>
 
 <svelte:head>
@@ -44,4 +48,4 @@
 </div>
 
 <CovidStat {...stats} />
-<CovidChart />
+<CovidChart historicData={historic} title="Covid - 19 - {state}" />
