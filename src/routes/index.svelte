@@ -8,7 +8,6 @@
 
       return { usStats, historic, statesData };
     } catch (e) {
-      console.log(e);
       this.error(500, e);
       return;
     }
@@ -23,7 +22,6 @@
   export let usStats;
   export let historic;
   export let statesData;
-  console.log(statesData);
 </script>
 
 <svelte:head>
